@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "chip_stack"
+title = "Chip Stack"
+description = "+50 Chips on every hand."
+rarity = "Common"
+price = 4
+effect = "chips"
+amount = 50.0
+condition = "always"
+art = "star"
+accent = Color(0.435294, 0.733333, 0.898039, 1)

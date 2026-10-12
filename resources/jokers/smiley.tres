@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "smiley"
+title = "Smiley"
+description = "Each scored face card gives +5 Mult."
+rarity = "Common"
+price = 5
+effect = "card_mult"
+amount = 5.0
+condition = "face"
+art = "sun"
+accent = Color(0.956863, 0.819608, 0.454902, 1)

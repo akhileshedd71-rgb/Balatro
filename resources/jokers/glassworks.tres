@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "glassworks"
+title = "Glassworks"
+description = "Each scored Glass card gives another ×1.5 Mult."
+rarity = "Rare"
+price = 8
+effect = "card_xmult"
+amount = 1.5
+condition = "glass"
+art = "prism"
+accent = Color(0.662745, 0.843137, 0.866667, 1)

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "fibonacci"
+title = "Fibonacci"
+description = "Scored A, 2, 3, 5 and 8 each give +8 Mult."
+rarity = "Uncommon"
+price = 7
+effect = "card_mult"
+amount = 8.0
+condition = "fibonacci"
+art = "eye"
+accent = Color(0.882353, 0.764706, 0.470588, 1)

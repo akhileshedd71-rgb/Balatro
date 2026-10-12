@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "clubhouse"
+title = "Clubhouse"
+description = "Each scored Club gives +2 Mult."
+rarity = "Common"
+price = 4
+effect = "card_mult"
+amount = 2.0
+condition = "C"
+art = "clover"
+accent = Color(0.513725, 0.796078, 0.631373, 1)

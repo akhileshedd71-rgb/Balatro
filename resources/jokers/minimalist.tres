@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "minimalist"
+title = "Minimalist"
+description = "+20 Mult if you play 3 or fewer cards."
+rarity = "Uncommon"
+price = 6
+effect = "mult"
+amount = 20.0
+condition = "small_hand"
+art = "prism"
+accent = Color(0.784314, 0.756863, 0.662745, 1)

@@ -1,0 +1,258 @@
+[gd_scene format=3]
+
+[ext_resource type="StyleBox" path="res://resources/inset.tres" id="inset"]
+[ext_resource type="StyleBox" path="res://resources/scoreblue.tres" id="blue"]
+[ext_resource type="StyleBox" path="res://resources/scorered.tres" id="red"]
+[ext_resource type="FontFile" path="res://assets/fonts/SpaceMono-Bold.ttf" id="mono"]
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="script"]
+
+[node name="RunHUD" type="PanelContainer"]
+custom_minimum_size = Vector2(264, 0)
+script = ExtResource("script")
+
+[node name="Stats" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="Eyebrow" type="Label" parent="Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "CURRENT BLIND"
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+horizontal_alignment = 1
+
+[node name="BlindTitle" type="Label" parent="Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Small Blind"
+theme_override_font_sizes/font_size = 29
+horizontal_alignment = 1
+
+[node name="BlindRule" type="Label" parent="Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "A little luck. A good beginning."
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Target" type="PanelContainer" parent="Stats"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("inset")
+
+[node name="TargetValues" type="VBoxContainer" parent="Stats/Target"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="TargetHint" type="Label" parent="Stats/Target/TargetValues"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SCORE AT LEAST"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+horizontal_alignment = 1
+
+[node name="TargetValue" type="Label" parent="Stats/Target/TargetValues"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "300"
+theme_override_font_sizes/font_size = 39
+theme_override_fonts/font = ExtResource("mono")
+horizontal_alignment = 1
+
+[node name="Reward" type="Label" parent="Stats/Target/TargetValues"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "REWARD  $3"
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.89, 0.74, 0.45, 1)
+horizontal_alignment = 1
+
+[node name="RoundHeading" type="HBoxContainer" parent="Stats"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="RoundHeadingLabel" type="Label" parent="Stats/RoundHeading"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ROUND SCORE"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+size_flags_horizontal = 3
+
+[node name="ScoreValue" type="Label" parent="Stats/RoundHeading"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+theme_override_font_sizes/font_size = 24
+
+
+[node name="Progress" type="ProgressBar" parent="Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 5)
+show_percentage = false
+mouse_filter = 2
+
+[node name="HandName" type="Label" parent="Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Choose your cards"
+theme_override_font_sizes/font_size = 23
+horizontal_alignment = 1
+
+[node name="HandLevel" type="Label" parent="Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PLAY UP TO 5 CARDS"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+horizontal_alignment = 1
+
+[node name="Equation" type="HBoxContainer" parent="Stats"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_constants/separation = 7
+
+[node name="ChipsBox" type="PanelContainer" parent="Stats/Equation"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("blue")
+
+[node name="Values" type="VBoxContainer" parent="Stats/Equation/ChipsBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_constants/separation = 0
+
+[node name="Chips" type="Label" parent="Stats/Equation/ChipsBox/Values"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+theme_override_font_sizes/font_size = 31
+horizontal_alignment = 1
+
+[node name="ChipsLabel" type="Label" parent="Stats/Equation/ChipsBox/Values"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "CHIPS"
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Times" type="Label" parent="Stats/Equation"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "×"
+theme_override_font_sizes/font_size = 27
+
+
+[node name="MultBox" type="PanelContainer" parent="Stats/Equation"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("red")
+
+[node name="Values" type="VBoxContainer" parent="Stats/Equation/MultBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_constants/separation = 0
+
+[node name="Mult" type="Label" parent="Stats/Equation/MultBox/Values"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+theme_override_font_sizes/font_size = 31
+horizontal_alignment = 1
+
+[node name="MultLabel" type="Label" parent="Stats/Equation/MultBox/Values"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MULT"
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Counters" type="HBoxContainer" parent="Stats"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="Hands" type="VBoxContainer" parent="Stats/Counters"]
+layout_mode = 2
+theme_override_constants/separation = 12
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="HandsLabel" type="Label" parent="Stats/Counters/Hands"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HANDS"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+horizontal_alignment = 1
+
+[node name="HandsValue" type="Label" parent="Stats/Counters/Hands"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "4"
+theme_override_font_sizes/font_size = 33
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.35, 0.73, 0.87, 1)
+
+[node name="Discards" type="VBoxContainer" parent="Stats/Counters"]
+layout_mode = 2
+theme_override_constants/separation = 12
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="DiscardsLabel" type="Label" parent="Stats/Counters/Discards"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DISCARDS"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+horizontal_alignment = 1
+
+[node name="DiscardsValue" type="Label" parent="Stats/Counters/Discards"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "4"
+theme_override_font_sizes/font_size = 33
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.93, 0.53, 0.43, 1)
+
+[node name="BottomStats" type="HBoxContainer" parent="Stats"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="Cash" type="Label" parent="Stats/BottomStats"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$4"
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(0.89, 0.74, 0.45, 1)
+size_flags_horizontal = 3
+
+[node name="Ante" type="Label" parent="Stats/BottomStats"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ANTE  1 / 8
+ROUND  1"
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 2
+
+[node name="Space" type="Control" parent="Stats"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="RunInfo" type="Button" parent="Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "Run info   ↗"
+custom_minimum_size = Vector2(0, 48)

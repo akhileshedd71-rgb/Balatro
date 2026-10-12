@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "diamond_mine"
+title = "Diamond Mine"
+description = "Each scored Diamond gives +6 Chips."
+rarity = "Common"
+price = 4
+effect = "card_chips"
+amount = 6.0
+condition = "D"
+art = "prism"
+accent = Color(0.929412, 0.725490, 0.431373, 1)

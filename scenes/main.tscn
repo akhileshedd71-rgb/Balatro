@@ -1,0 +1,229 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game_ui.gd" id="script"]
+[ext_resource type="Theme" path="res://resources/theme.tres" id="theme"]
+[ext_resource type="Shader" path="res://shaders/felt.gdshader" id="felt"]
+[ext_resource type="Shader" path="res://shaders/crt.gdshader" id="crt"]
+[ext_resource type="PackedScene" path="res://scenes/ui/run_hud.tscn" id="hud"]
+[ext_resource type="PackedScene" path="res://scenes/run_controller.tscn" id="run"]
+[ext_resource type="PackedScene" path="res://scenes/ui/table_view.tscn" id="table"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialog.tscn" id="dialog"]
+[ext_resource type="Script" path="res://scripts/ui/audio_director.gd" id="audio"]
+[ext_resource type="FontFile" path="res://assets/fonts/SpaceMono-Bold.ttf" id="mono"]
+
+[sub_resource type="ShaderMaterial" id="Felt"]
+shader = ExtResource("felt")
+
+[sub_resource type="ShaderMaterial" id="CRT"]
+shader = ExtResource("crt")
+
+[node name="MidnightTable" type="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("theme")
+script = ExtResource("script")
+
+[node name="Felt" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+material = SubResource("Felt")
+
+[node name="RunController" parent="." instance=ExtResource("run")]
+unique_name_in_owner = true
+
+[node name="AudioDirector" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("audio")
+
+[node name="Music" type="AudioStreamPlayer" parent="AudioDirector"]
+
+[node name="Effects" type="AudioStreamPlayer" parent="AudioDirector"]
+max_polyphony = 8
+
+[node name="SafeMargin" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="Layout" type="VBoxContainer" parent="SafeMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_constants/separation = 18
+
+[node name="Header" type="HBoxContainer" parent="SafeMargin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+custom_minimum_size = Vector2(0, 64)
+theme_override_constants/separation = 18
+
+[node name="Brand" type="Label" parent="SafeMargin/Layout/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "BALATRO"
+theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("mono")
+
+[node name="BrandDivider" type="VSeparator" parent="SafeMargin/Layout/Header"]
+layout_mode = 2
+
+[node name="Subtitle" type="Label" parent="SafeMargin/Layout/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "THE MIDNIGHT TABLE
+ONE HAND CAN CHANGE EVERYTHING."
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+size_flags_horizontal = 3
+
+[node name="HeaderSpacer" type="Control" parent="SafeMargin/Layout/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Seed" type="Label" parent="SafeMargin/Layout/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SEED  MIDNIGHT"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+
+
+[node name="SoundButton" type="Button" parent="SafeMargin/Layout/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "♪"
+custom_minimum_size = Vector2(54, 50)
+
+[node name="MenuButton" type="Button" parent="SafeMargin/Layout/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "Menu  ≡"
+custom_minimum_size = Vector2(104, 50)
+
+[node name="Separator" type="HSeparator" parent="SafeMargin/Layout"]
+layout_mode = 2
+
+[node name="CompactHUD" type="HBoxContainer" parent="SafeMargin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 74)
+
+[node name="CompactBlind" type="Label" parent="SafeMargin/Layout/CompactHUD"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Small Blind
+0 / 300"
+theme_override_font_sizes/font_size = 22
+size_flags_horizontal = 3
+
+[node name="CompactHands" type="Label" parent="SafeMargin/Layout/CompactHUD"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "4 HANDS
+4 DISCARDS"
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+size_flags_horizontal = 3
+
+[node name="CompactCash" type="Label" parent="SafeMargin/Layout/CompactHUD"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$4
+ANTE 1/8"
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.89, 0.74, 0.45, 1)
+horizontal_alignment = 2
+
+[node name="Body" type="HBoxContainer" parent="SafeMargin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="RunHUD" parent="SafeMargin/Layout/Body" instance=ExtResource("hud")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TableView" parent="SafeMargin/Layout/Body" instance=ExtResource("table")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Footer" type="HBoxContainer" parent="SafeMargin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="FooterLeft" type="Label" parent="SafeMargin/Layout/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "♠   A LITTLE LUCK. A LOT OF POSSIBILITIES."
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+size_flags_horizontal = 3
+
+[node name="FooterRight" type="Label" parent="SafeMargin/Layout/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "TAP TO SELECT   ·   PLAY UP TO 5"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+
+
+[node name="CRT" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+unique_name_in_owner = true
+mouse_filter = 2
+material = SubResource("CRT")
+
+[node name="Dialog" parent="." instance=ExtResource("dialog")]
+z_index = 100
+unique_name_in_owner = true
+
+[node name="Toast" type="Label" parent="."]
+z_index = 110
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_top = 0.9
+anchor_bottom = 0.96
+mouse_filter = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_colors/font_color = Color(1, 0.86, 0.57, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 24

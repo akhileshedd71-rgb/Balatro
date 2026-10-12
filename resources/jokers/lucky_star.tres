@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "lucky_star"
+title = "Lucky Star"
+description = "Each scored Lucky card gives +8 Mult."
+rarity = "Uncommon"
+price = 6
+effect = "card_mult"
+amount = 8.0
+condition = "lucky"
+art = "clover"
+accent = Color(0.835294, 0.839216, 0.529412, 1)

@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=3 format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/ChakraPetch-SemiBold.ttf" id="base"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSans.ttf" id="symbols"]
+
+[resource]
+base_font = ExtResource("base")
+fallbacks = Array[Font]([ExtResource("symbols")])

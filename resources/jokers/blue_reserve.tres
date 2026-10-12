@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "blue_reserve"
+title = "Blue Reserve"
+description = "+2 Mult per discard remaining."
+rarity = "Common"
+price = 4
+effect = "mult_per_discard_left"
+amount = 2.0
+condition = "always"
+art = "star"
+accent = Color(0.443137, 0.709804, 0.831373, 1)

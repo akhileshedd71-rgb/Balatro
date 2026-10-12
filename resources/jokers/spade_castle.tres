@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "spade_castle"
+title = "Spade Castle"
+description = "Each scored Spade gives +8 Chips."
+rarity = "Common"
+price = 5
+effect = "card_chips"
+amount = 8.0
+condition = "S"
+art = "moon"
+accent = Color(0.572549, 0.623529, 0.831373, 1)

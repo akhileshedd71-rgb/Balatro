@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "triplicate"
+title = "Triplicate"
+description = "+12 Mult if your hand contains Three of a Kind."
+rarity = "Common"
+price = 5
+effect = "mult"
+amount = 12.0
+condition = "triple"
+art = "prism"
+accent = Color(0.929412, 0.639216, 0.517647, 1)

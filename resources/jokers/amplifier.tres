@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "amplifier"
+title = "Amplifier"
+description = "×2 Mult. Place after +Mult Jokers."
+rarity = "Rare"
+price = 8
+effect = "xmult"
+amount = 2.0
+condition = "always"
+art = "prism"
+accent = Color(0.819608, 0.639216, 0.925490, 1)

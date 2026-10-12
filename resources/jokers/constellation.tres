@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "constellation"
+title = "Constellation"
+description = "×1 Mult, plus ×0.1 for every Planet used this run."
+rarity = "Uncommon"
+price = 7
+effect = "xmult_per_planet"
+amount = 0.1
+condition = "always"
+art = "star"
+accent = Color(0.749020, 0.627451, 0.843137, 1)

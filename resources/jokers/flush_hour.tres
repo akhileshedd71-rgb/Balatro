@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "flush_hour"
+title = "Flush Hour"
+description = "+15 Mult when playing any Flush hand."
+rarity = "Uncommon"
+price = 6
+effect = "mult"
+amount = 15.0
+condition = "flush"
+art = "moon"
+accent = Color(0.901961, 0.560784, 0.607843, 1)

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "stargazer"
+title = "Stargazer"
+description = "Adds twice the chip value of your lowest held card to Mult."
+rarity = "Uncommon"
+price = 7
+effect = "held_low"
+amount = 2.0
+condition = "always"
+art = "eye"
+accent = Color(0.729412, 0.647059, 0.878431, 1)

@@ -1,0 +1,131 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/playing_card.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/card_back.svg" id="2"]
+
+[sub_resource type="StyleBoxEmpty" id="Empty"]
+
+[sub_resource type="StyleBoxFlat" id="Paper"]
+bg_color = Color(0.952941, 0.917647, 0.835294, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.788235, 0.760784, 0.682353, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
+shadow_color = Color(0.015, 0.05, 0.045, 0.65)
+shadow_size = 3
+shadow_offset = Vector2(1, 5)
+
+[node name="PlayingCard" type="Button"]
+custom_minimum_size = Vector2(80, 112)
+offset_right = 108.0
+offset_bottom = 156.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("Empty")
+theme_override_styles/hover = SubResource("Empty")
+theme_override_styles/pressed = SubResource("Empty")
+theme_override_styles/disabled = SubResource("Empty")
+theme_override_styles/focus = SubResource("Empty")
+script = ExtResource("1")
+
+[node name="Visual" type="Control" parent="."]
+layout_mode = 0
+offset_right = 108.0
+offset_bottom = 156.0
+mouse_filter = 2
+
+[node name="Paper" type="Panel" parent="Visual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Paper")
+
+[node name="CourtArt" type="TextureRect" parent="Visual"]
+visible = false
+layout_mode = 1
+anchor_left = 0.265
+anchor_top = 0.19
+anchor_right = 0.735
+anchor_bottom = 0.81
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Pips" type="Control" parent="Visual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="TopRank" type="Label" parent="Visual"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 27
+text = "A"
+
+[node name="BottomRank" type="Label" parent="Visual"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 151.0
+offset_right = 135.0
+offset_bottom = 186.0
+rotation = 3.1415927
+mouse_filter = 2
+theme_override_font_sizes/font_size = 27
+text = "A"
+
+[node name="Enhancement" type="Label" parent="Visual"]
+layout_mode = 1
+anchor_left = 0.24
+anchor_top = 0.87
+anchor_right = 0.76
+anchor_bottom = 0.95
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.36, 0.38, 0.34, 1)
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+
+[node name="HoldTimer" type="Timer" parent="."]
+wait_time = 0.45
+one_shot = true
+
+[node name="BackArt" type="TextureRect" parent="Visual"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="SelectedMark" type="Label" parent="Visual"]
+visible = false
+layout_mode = 1
+anchor_left = 0.35
+anchor_top = 0.02
+anchor_right = 0.65
+anchor_bottom = 0.13
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.76, 0.54, 0.2, 1)
+theme_override_font_sizes/font_size = 17
+text = "•"
+horizontal_alignment = 1

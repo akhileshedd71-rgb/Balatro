@@ -1,0 +1,62 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/shop_view.gd" id="script"]
+[ext_resource type="StyleBox" path="res://resources/gold.tres" id="gold"]
+
+[node name="ShopView" type="VBoxContainer"]
+theme_override_constants/separation = 12
+script = ExtResource("script")
+
+[node name="ShopEyebrow" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "BETWEEN THE BLINDS"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+horizontal_alignment = 1
+
+[node name="ShopTitle" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Make your own luck."
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+
+[node name="OfferScroll" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 100)
+horizontal_scroll_mode = 0
+
+[node name="Offers" type="GridContainer" parent="OfferScroll"]
+size_flags_horizontal = 3
+unique_name_in_owner = true
+layout_mode = 2
+columns = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 10
+
+[node name="ShopActions" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="Reroll" type="Button" parent="ShopActions"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "Reroll  $5"
+size_flags_horizontal = 3
+
+[node name="NextBlind" type="Button" parent="ShopActions"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "Next blind  →"
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("gold")
+theme_override_colors/font_color = Color(0.12, 0.19, 0.16, 1)

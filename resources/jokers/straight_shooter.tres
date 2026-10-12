@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "straight_shooter"
+title = "Straight Shooter"
+description = "+100 Chips when playing a Straight or Straight Flush."
+rarity = "Uncommon"
+price = 6
+effect = "chips"
+amount = 100.0
+condition = "straight"
+art = "star"
+accent = Color(0.498039, 0.772549, 0.725490, 1)

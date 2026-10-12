@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "last_call"
+title = "Last Call"
+description = "×3 Mult on the last hand of a blind."
+rarity = "Uncommon"
+price = 7
+effect = "xmult"
+amount = 3.0
+condition = "last_hand"
+art = "skull"
+accent = Color(0.854902, 0.521569, 0.541176, 1)

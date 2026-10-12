@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "boss_breaker"
+title = "Boss Breaker"
+description = "×2 Mult against Boss Blinds."
+rarity = "Uncommon"
+price = 6
+effect = "xmult"
+amount = 2.0
+condition = "boss"
+art = "skull"
+accent = Color(0.929412, 0.623529, 0.466667, 1)

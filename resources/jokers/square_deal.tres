@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "square_deal"
+title = "Square Deal"
+description = "×3 Mult if your hand contains Four of a Kind."
+rarity = "Rare"
+price = 8
+effect = "xmult"
+amount = 3.0
+condition = "four"
+art = "prism"
+accent = Color(0.662745, 0.827451, 0.729412, 1)

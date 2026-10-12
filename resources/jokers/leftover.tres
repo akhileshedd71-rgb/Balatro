@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "leftover"
+title = "Leftover"
+description = "+15 Chips per hand remaining after this play."
+rarity = "Common"
+price = 4
+effect = "chips_per_hand_left"
+amount = 15.0
+condition = "always"
+art = "moon"
+accent = Color(0.698039, 0.768627, 0.905882, 1)

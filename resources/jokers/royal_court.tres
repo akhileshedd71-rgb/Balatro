@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "royal_court"
+title = "Royal Court"
+description = "Each King held in hand gives ×1.5 Mult."
+rarity = "Rare"
+price = 8
+effect = "held_king"
+amount = 1.5
+condition = "always"
+art = "joker"
+accent = Color(0.874510, 0.745098, 0.474510, 1)

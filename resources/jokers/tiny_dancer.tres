@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "tiny_dancer"
+title = "Tiny Dancer"
+description = "Scored 2, 3, 4 and 5 each give ×1.2 Mult."
+rarity = "Uncommon"
+price = 6
+effect = "card_xmult"
+amount = 1.2
+condition = "small"
+art = "star"
+accent = Color(0.905882, 0.654902, 0.772549, 1)

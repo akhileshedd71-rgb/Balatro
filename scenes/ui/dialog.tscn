@@ -1,0 +1,162 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/dialog.gd" id="script"]
+[ext_resource type="StyleBox" path="res://resources/gold.tres" id="gold"]
+
+[node name="Dialog" type="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+visible = false
+script = ExtResource("script")
+mouse_filter = 0
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015, 0.04, 0.035, 0.88)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Center" type="CenterContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Margin/Center"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(620, 600)
+horizontal_scroll_mode = 0
+
+[node name="Panel" type="PanelContainer" parent="Margin/Center/Scroll"]
+size_flags_horizontal = 3
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(580, 0)
+
+[node name="Layout" type="VBoxContainer" parent="Margin/Center/Scroll/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_constants/separation = 16
+
+[node name="Heading" type="HBoxContainer" parent="Margin/Center/Scroll/Panel/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="Title" type="Label" parent="Margin/Center/Scroll/Panel/Layout/Heading"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "The midnight table"
+theme_override_font_sizes/font_size = 29
+size_flags_horizontal = 3
+
+[node name="Close" type="Button" parent="Margin/Center/Scroll/Panel/Layout/Heading"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "×"
+custom_minimum_size = Vector2(50, 46)
+
+[node name="Body" type="RichTextLabel" parent="Margin/Center/Scroll/Panel/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 120)
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = true
+scroll_active = true
+theme_override_font_sizes/normal_font_size = 19
+
+[node name="NewRunFields" type="VBoxContainer" parent="Margin/Center/Scroll/Panel/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+unique_name_in_owner = true
+visible = false
+
+[node name="SeedLabel" type="Label" parent="Margin/Center/Scroll/Panel/Layout/NewRunFields"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "RUN SEED"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+
+
+[node name="SeedInput" type="LineEdit" parent="Margin/Center/Scroll/Panel/Layout/NewRunFields"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 52)
+placeholder_text = "Random seed"
+max_length = 24
+
+[node name="DeckChoice" type="OptionButton" parent="Margin/Center/Scroll/Panel/Layout/NewRunFields"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 52)
+
+[node name="StakeChoice" type="OptionButton" parent="Margin/Center/Scroll/Panel/Layout/NewRunFields"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 52)
+
+[node name="ChallengeChoice" type="OptionButton" parent="Margin/Center/Scroll/Panel/Layout/NewRunFields"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 52)
+
+[node name="Settings" type="VBoxContainer" parent="Margin/Center/Scroll/Panel/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+unique_name_in_owner = true
+visible = false
+
+[node name="MusicToggle" type="CheckButton" parent="Margin/Center/Scroll/Panel/Layout/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+text = "Ambient music"
+button_pressed = true
+
+[node name="EffectsToggle" type="CheckButton" parent="Margin/Center/Scroll/Panel/Layout/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+text = "Sound effects"
+button_pressed = true
+
+[node name="MotionToggle" type="CheckButton" parent="Margin/Center/Scroll/Panel/Layout/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+text = "Animated felt & card motion"
+button_pressed = true
+
+[node name="CRTToggle" type="CheckButton" parent="Margin/Center/Scroll/Panel/Layout/Settings"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+text = "Subtle CRT texture"
+button_pressed = true
+
+[node name="Choices" type="VBoxContainer" parent="Margin/Center/Scroll/Panel/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+unique_name_in_owner = true
+theme_override_constants/separation = 8

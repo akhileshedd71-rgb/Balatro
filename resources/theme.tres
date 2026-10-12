@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=8 format=3]
+
+[ext_resource type="FontVariation" path="res://resources/ui_font.tres" id="1"]
+[ext_resource type="StyleBox" path="res://resources/button.tres" id="2"]
+[ext_resource type="StyleBox" path="res://resources/hover.tres" id="3"]
+[ext_resource type="StyleBox" path="res://resources/pressed.tres" id="4"]
+[ext_resource type="StyleBox" path="res://resources/disabled.tres" id="5"]
+[ext_resource type="StyleBox" path="res://resources/panel.tres" id="6"]
+[ext_resource type="StyleBox" path="res://resources/inset.tres" id="7"]
+
+[resource]
+default_font = ExtResource("1")
+default_font_size = 20
+Label/colors/font_color = Color(0.96,0.92,0.81,1)
+Button/colors/font_color = Color(0.96,0.92,0.81,1)
+Button/colors/font_disabled_color = Color(0.45,0.57,0.5,1)
+Button/constants/outline_size = 0
+Button/styles/normal = ExtResource("2")
+Button/styles/hover = ExtResource("3")
+Button/styles/pressed = ExtResource("4")
+Button/styles/disabled = ExtResource("5")
+Button/styles/focus = ExtResource("3")
+PanelContainer/styles/panel = ExtResource("6")
+LineEdit/styles/normal = ExtResource("7")
+LineEdit/styles/focus = ExtResource("3")
+LineEdit/colors/font_color = Color(0.96,0.92,0.81,1)
+LineEdit/colors/font_placeholder_color = Color(0.55,0.65,0.56,1)
+OptionButton/styles/normal = ExtResource("2")
+OptionButton/styles/hover = ExtResource("3")
+OptionButton/styles/pressed = ExtResource("4")
+OptionButton/colors/font_color = Color(0.96,0.92,0.81,1)
+HSeparator/constants/separation = 12

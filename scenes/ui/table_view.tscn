@@ -1,0 +1,272 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/table_view.gd" id="script"]
+[ext_resource type="StyleBox" path="res://resources/inset.tres" id="inset"]
+[ext_resource type="StyleBox" path="res://resources/gold.tres" id="gold"]
+[ext_resource type="StyleBox" path="res://resources/red.tres" id="red"]
+[ext_resource type="PackedScene" path="res://scenes/ui/shop_view.tscn" id="shop"]
+
+[node name="TableView" type="VBoxContainer"]
+theme_override_constants/separation = 14
+script = ExtResource("script")
+
+[node name="Inventory" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_constants/separation = 18
+
+[node name="JokerPanel" type="PanelContainer" parent="Inventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("inset")
+
+[node name="Layout" type="VBoxContainer" parent="Inventory/JokerPanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_constants/separation = 6
+
+[node name="Heading" type="HBoxContainer" parent="Inventory/JokerPanel/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="JokerCount" type="Label" parent="Inventory/JokerPanel/Layout/Heading"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "JOKERS   1 / 5"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+size_flags_horizontal = 3
+
+[node name="OrderHint" type="Label" parent="Inventory/JokerPanel/Layout/Heading"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ORDER MATTERS  →"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+
+
+[node name="JokerRow" type="Control" parent="Inventory/JokerPanel/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 142)
+
+[node name="ConsumablePanel" type="PanelContainer" parent="Inventory"]
+layout_mode = 2
+custom_minimum_size = Vector2(184, 0)
+theme_override_styles/panel = ExtResource("inset")
+
+[node name="Layout" type="VBoxContainer" parent="Inventory/ConsumablePanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="PocketHeading" type="Label" parent="Inventory/ConsumablePanel/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "POCKET   0 / 2"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+
+
+[node name="Pockets" type="HBoxContainer" parent="Inventory/ConsumablePanel/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+size_flags_vertical = 3
+
+[node name="Pocket0" type="Button" parent="Inventory/ConsumablePanel/Layout/Pockets"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "+"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(65, 110)
+theme_override_font_sizes/font_size = 25
+
+[node name="Pocket1" type="Button" parent="Inventory/ConsumablePanel/Layout/Pockets"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "+"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(65, 110)
+theme_override_font_sizes/font_size = 25
+
+[node name="Pocket2" type="Button" parent="Inventory/ConsumablePanel/Layout/Pockets"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(50, 90)
+text = "+"
+clip_text = true
+text_overrun_behavior = 3
+theme_override_font_sizes/font_size = 18
+
+[node name="Stage" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 195)
+
+[node name="StageCenter" type="VBoxContainer" parent="Stage"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 8
+
+[node name="StageEyebrow" type="Label" parent="Stage/StageCenter"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MAKE YOUR NEXT MOVE"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+horizontal_alignment = 1
+
+[node name="StageTitle" type="Label" parent="Stage/StageCenter"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "The table is yours."
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+
+[node name="StageDescription" type="Label" parent="Stage/StageCenter"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Select up to 5 cards to make a poker hand."
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+horizontal_alignment = 1
+
+[node name="ScoredCards" type="Control" parent="Stage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+unique_name_in_owner = true
+mouse_filter = 2
+visible = false
+
+[node name="AdvanceButton" type="Button" parent="Stage/StageCenter"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "Play Small Blind"
+visible = false
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(260, 58)
+
+[node name="ShopView" parent="." instance=ExtResource("shop")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HandSection" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+unique_name_in_owner = true
+theme_override_constants/separation = 2
+
+[node name="HandHeading" type="HBoxContainer" parent="HandSection"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+
+[node name="HandCaption" type="Label" parent="HandSection/HandHeading"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "YOUR HAND"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+size_flags_horizontal = 3
+
+[node name="SelectionLabel" type="Label" parent="HandSection/HandHeading"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0 / 5 SELECTED"
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.89, 0.74, 0.45, 1)
+
+
+[node name="HandArea" type="Control" parent="HandSection"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 193)
+
+[node name="Actions" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+unique_name_in_owner = true
+theme_override_constants/separation = 12
+
+[node name="PlayButton" type="Button" parent="Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "Play hand  ↗"
+custom_minimum_size = Vector2(176, 62)
+theme_override_styles/normal = ExtResource("gold")
+theme_override_colors/font_color = Color(0.12, 0.19, 0.16, 1)
+
+[node name="DiscardButton" type="Button" parent="Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "Discard"
+custom_minimum_size = Vector2(130, 62)
+
+[node name="ActionSpace" type="Control" parent="Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="SortLabel" type="Label" parent="Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SORT"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.54, 0.69, 0.62, 1)
+
+
+[node name="SortRank" type="Button" parent="Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "Rank"
+custom_minimum_size = Vector2(76, 55)
+theme_override_font_sizes/font_size = 16
+
+[node name="SortSuit" type="Button" parent="Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "Suit"
+custom_minimum_size = Vector2(70, 55)
+theme_override_font_sizes/font_size = 16
+
+[node name="DeckButton" type="Button" parent="Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+mouse_default_cursor_shape = 2
+text = "▤  44 / 52"
+custom_minimum_size = Vector2(122, 55)
+theme_override_font_sizes/font_size = 16

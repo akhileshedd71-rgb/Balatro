@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "pair_program"
+title = "Pair Program"
+description = "+8 Mult if your hand contains a Pair."
+rarity = "Common"
+price = 4
+effect = "mult"
+amount = 8.0
+condition = "pair"
+art = "eye"
+accent = Color(0.564706, 0.741176, 0.921569, 1)

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JokerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/joker_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "echo"
+title = "Echo"
+description = "+2 Mult per previous play of this hand type."
+rarity = "Uncommon"
+price = 6
+effect = "mult_per_hand"
+amount = 2.0
+condition = "always"
+art = "moon"
+accent = Color(0.549020, 0.717647, 0.815686, 1)
